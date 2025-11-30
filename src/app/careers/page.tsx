@@ -68,7 +68,7 @@ export default function Careers() {
           <Guilloche type="wave" color="#EED89E" />
         </div>
         <FadeIn>
-          <div className="container">
+          <div className="container mx-auto">
             <div className="w-full flex flex-col items-start justify-start">
               <h1 className="font-serif text-5xl md:text-7xl mb-8 leading-tighter tracking-tighter">
                 The Operating System for <br />
