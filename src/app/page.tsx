@@ -5,6 +5,7 @@ import { Guilloche } from '@/components/guilloche/Guilloche';
 import FadeIn from '@/components/animations/FadeIn';
 import { Button } from '@/components/ui/button';
 import Audience from '@/app/components/homepage/Audience';
+import Platform from '@/app/components/homepage/Platform';
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -76,6 +77,9 @@ export default function Home() {
 
       {/* Audience Section */}
       <Audience />
+
+      {/* Platform Section */}
+      <Platform />
     </main>
   );
 }

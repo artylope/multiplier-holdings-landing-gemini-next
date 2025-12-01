@@ -13,7 +13,7 @@ interface HeroProps {
   }>;
 }
 
-export default function Hero({
+export default function CareersHero({
   title = (
     <>
       The Operating System for <br />
@@ -28,7 +28,7 @@ export default function Hero({
   ],
 }: HeroProps) {
   return (
-    <section className="py-24 px-4 bg-forest text-cream min-h-[60vh] relative overflow-hidden">
+    <section className="py-24 px-4 bg-forest text-cream  relative overflow-hidden">
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <Guilloche type="wave" color="#EED89E" />
       </div>
