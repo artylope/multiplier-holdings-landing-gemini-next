@@ -69,7 +69,7 @@ export default function Footer() {
             </a>
           </div>
           <div
-            className="grid grid-cols-2 gap-8 text-sm transition-all duration-1000 ease-out"
+            className="grid grid-cols-3 gap-8 text-sm transition-all duration-1000 ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateY(0)" : "translateY(30px)",
@@ -81,74 +81,72 @@ export default function Footer() {
               <h3 className="text-xs font-bold tracking-widest uppercase text-cream/40 mb-4">
                 Links
               </h3>
-              <div className="flex flex-col gap-8">
-                <ul className="space-y-2 text-sm">
-                  {[
-                    { href: "/", label: "Home" },
-                    { href: "/portfolio", label: "Portfolio" },
-                    { href: "/blog", label: "Blog" },
-                    { href: "/careers", label: "Careers" },
-                    { href: "/about", label: "About" },
-                  ].map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="block text-cream/80 hover:text-gold hover:translate-x-1 transition-all duration-300"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-
-              
-              </div>
-            </div>
-            <div className="flex flex-col gap-8">
-              <div>
-                <h3 className="text-xs font-bold tracking-widest uppercase text-cream/40 mb-4">
-                  Offices
-                </h3>
-                <ul className="space-y-2 text-sm">
-                  {[
-                    { city: "San Francisco" },
-                    { city: "London" },
-                    { city: "Singapore" },
-                  ].map((office) => (
-                    <li
-                      key={office.city}
-                      className="flex items-center gap-1 group cursor-default"
+              <ul className="space-y-2 text-sm">
+                {[
+                  { href: "/", label: "Home" },
+                  { href: "/portfolio", label: "Portfolio" },
+                  { href: "/blog", label: "Blog" },
+                  { href: "/careers", label: "Careers" },
+                  { href: "/about", label: "About" },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="block text-cream/80 hover:text-gold hover:translate-x-1 transition-all duration-300"
                     >
-                      <div className=" flex items-center justify-center transition-colors">
-                        <MapPin size={10} className="text-gold" />
-                      </div>
-                      <span className="text-cream/90 font-medium tracking-wide">
-                        {office.city}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                  <h3 className="text-xs font-bold tracking-widest uppercase text-cream/40 mb-4">
-                    Legal
-                  </h3>
-                  <ul className="space-y-2 text-sm">
-                    {[
-                      { label: "Privacy Policy", href: "/privacy" },
-                      { label: "Terms of Service", href: "/terms" },
-                    ].map((item) => (
-                      <li key={item.label}>
-                        <Link
-                          href={item.href}
-                          className="block text-cream/80 hover:text-gold hover:translate-x-1 transition-all duration-300"
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h3 className="text-xs font-bold tracking-widest uppercase text-cream/40 mb-4">
+                Legal
+              </h3>
+              <ul className="space-y-2 text-sm">
+                {[
+                  { label: "Privacy Policy", href: "/privacy" },
+                  { label: "Terms of Service", href: "/terms" },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="block text-cream/80 hover:text-gold hover:translate-x-1 transition-all duration-300"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Offices */}
+            <div>
+              <h3 className="text-xs font-bold tracking-widest uppercase text-cream/40 mb-4">
+                Offices
+              </h3>
+              <ul className="space-y-2 text-sm">
+                {[
+                  { city: "San Francisco" },
+                  { city: "London" },
+                  { city: "Singapore" },
+                ].map((office) => (
+                  <li
+                    key={office.city}
+                    className="flex items-center gap-1 group cursor-default"
+                  >
+                    <div className="flex items-center justify-center transition-colors">
+                      <MapPin size={10} className="text-gold" />
+                    </div>
+                    <span className="text-cream/90 font-medium tracking-wide">
+                      {office.city}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
