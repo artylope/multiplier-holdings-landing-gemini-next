@@ -7,43 +7,24 @@ import WorldMap from '@/components/WorldMap';
 import FirmCard from '@/components/FirmCard';
 import FadeIn from '@/components/animations/FadeIn';
 
-// Sample firms data - can be moved to a separate data file
 const firms = [
   {
+    name: 'Expat Tax Professionals',
+    location: 'Hackensack, NJ',
+    coverage: ['North America', 'Europe', 'Asia Pacific'],
+    description: 'US Federal Tax Return Preparation and compliance for US citizens living abroad, specializing in offshore disclosures and foreign tax credits.'
+  },
+  {
     name: 'Citrine International',
-    location: 'San Francisco, CA',
-    coverage: ['North America', 'Europe'],
-    description: 'Cross-border tax and compliance specialists for high-net-worth individuals and families.'
+    location: 'Oxford, UK',
+    coverage: ['Europe', 'North America'],
+    description: 'Boutique international tax compliance firm providing UK and US tax advisory and compliance services with offices in Oxford, London, and Paris.'
   },
   {
-    name: 'Sterling Advisory',
-    location: 'Singapore',
-    coverage: ['Asia Pacific', 'Middle East'],
-    description: 'Multi-jurisdictional accounting and wealth structuring for global families.'
-  },
-  {
-    name: 'Apex Partners',
+    name: 'Onside Accounting',
     location: 'London, UK',
-    coverage: ['Europe', 'Middle East'],
-    description: 'International tax planning and regulatory compliance for multinational corporations.'
-  },
-  {
-    name: 'Summit Financial',
-    location: 'Hong Kong',
-    coverage: ['Asia Pacific'],
-    description: 'Corporate restructuring and tax optimization across Asian markets.'
-  },
-  {
-    name: 'Horizon Group',
-    location: 'Dubai, UAE',
-    coverage: ['Middle East', 'Europe', 'Asia Pacific'],
-    description: 'Global wealth management and tax advisory for UHNW families.'
-  },
-  {
-    name: 'Pacific Advisory',
-    location: 'Sydney, Australia',
-    coverage: ['Asia Pacific'],
-    description: 'Cross-border tax solutions and family office services.'
+    coverage: ['Europe'],
+    description: 'Chartered Certified Accountants supporting technology startups and high-growth businesses with cloud accounting, tax advisory, and R&D tax credits.'
   }
 ];
 
@@ -52,20 +33,24 @@ export default function PortfolioNetwork() {
 
   return (
     <Section id="network" className="bg-cream">
-      <div className="text-center mb-16">
-        <span className="text-forest/60 text-xs font-bold uppercase tracking-[0.2em] mb-4 block">
+      <div className="text-center mb-20">
+        <span className="text-forest/50 text-[10px] font-bold uppercase tracking-[0.3em] mb-6 block">
           Global Reach
         </span>
-        <h2 className="font-serif text-4xl md:text-5xl text-forest">Portfolio Network</h2>
+        <h2 className="font-serif text-5xl md:text-6xl tracking-tight text-forest leading-[1.1]">
+          Portfolio Network
+        </h2>
         {selectedRegion && (
-          <div className="mt-4 animate-in fade-in slide-in-from-top-2">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-forest text-gold rounded-full text-sm shadow-md border border-gold/30">
-              Filtering by: <span className="font-bold">{selectedRegion}</span>
+          <div className="mt-8 animate-in fade-in slide-in-from-top-2">
+            <span className="inline-flex items-center gap-3 px-5 py-2.5 bg-forest text-cream text-sm tracking-wide border border-gold/20">
+              <span className="text-gold/70 text-xs uppercase tracking-wider">Filtering:</span>
+              <span className="font-medium">{selectedRegion}</span>
               <button
                 onClick={() => setSelectedRegion(null)}
-                className="ml-2 hover:text-white"
+                className="ml-1 hover:text-gold transition-colors"
+                aria-label="Clear filter"
               >
-                <X size={14} />
+                <X size={16} strokeWidth={2.5} />
               </button>
             </span>
           </div>
@@ -73,12 +58,12 @@ export default function PortfolioNetwork() {
       </div>
 
       <FadeIn>
-        <div className="mb-16">
+        <div className="mb-20">
           <WorldMap selectedRegion={selectedRegion} onSelectRegion={setSelectedRegion} />
         </div>
       </FadeIn>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-6">
         {firms.map((firm, idx) => {
           const isIncluded = selectedRegion ? firm.coverage.includes(selectedRegion) : true;
 
