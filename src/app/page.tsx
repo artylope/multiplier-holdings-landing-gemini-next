@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section id="hero" className="relative flex items-center justify-center bg-forest overflow-hidden py-24 px-4">
+      <section id="hero" className="relative flex items-center justify-center bg-forest overflow-hidden mx-auto py-12 md:py-24 px-4">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <Guilloche className="text-gold" type="wave" opacity={0.2} />

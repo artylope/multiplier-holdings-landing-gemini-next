@@ -39,8 +39,8 @@ export default function Footer() {
       className="bg-forest pt-24 pb-12 border-t-4 border-gold/30 relative overflow-hidden"
     >
       <Guilloche
-        className="text-gold pointer-events-none top-20"
-        opacity={0.15}
+        className="text-gold pointer-events-none scale-105"
+        opacity={0.1}
         type="wave"
       />
 
@@ -132,7 +132,6 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 {[
                   { city: "San Francisco" },
-                  { city: "London" },
                   { city: "Singapore" },
                 ].map((office) => (
                   <li
@@ -154,7 +153,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div
-          className="border-t border-cream/10 pt-8 flex items-center justify-between transition-all duration-1000 ease-out"
+          className=" flex items-center justify-between transition-all duration-1000 ease-out"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(30px)",
@@ -163,7 +162,7 @@ export default function Footer() {
         >
           <MultiplierLogo
             variant="icon"
-            className="text-gold h-4 -ml-10"
+            className="text-gold h-4 -ml-11"
           />
           <p className="text-gold/70 text-sm">
             © Multiplier Holdings. All rights reserved.
